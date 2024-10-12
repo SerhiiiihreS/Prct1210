@@ -54,7 +54,54 @@ namespace Prct1210
             #endregion
 
 
-            #region
+            # region Задание 2 Создайте приложение, отображающее количество значений в массиве меньше заданного параметра пользователем. Например, количество значений меньших, чем 7 (7 введено пользователем с клавиатуры).
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = rnd.Next(-30, 30); // от -20 до +20
+                Console.Write("{0}\t", arr[i]);
+            }
+            Console.WriteLine();
+            Console.WriteLine("___________________________________");
+            int der = Convert.ToInt32(Console.ReadLine());
+            int sr1 = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if((arr[i] < der)){
+                    sr1++;
+                }
+            }
+            Console.WriteLine(sr1);
+
+            #endregion
+            # region Задание 5 Разработайте приложение, которое будет находить минимальное и максимальное значение в двумерном массиве.
+            int[,] intArray = new int[5, 5];
+
+            Console.WriteLine("Length = {0}", intArray.Length);
+
+            for (int i = 0; i < intArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < intArray.GetLength(1); j++)
+                {
+                    intArray[i,j] = rnd.Next(-30, 30);
+                    Console.Write("{0,4}", intArray[i, j]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+            int max = intArray[0, 0];
+            int min = intArray[0, 0];
+
+            Console.WriteLine("-----------------------");
+            for (int i = 0; i < intArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < intArray.GetLength(1); j++)
+                {
+                    if (intArray[i, j] > max) {max= intArray[i, j];}
+                    if (intArray[i, j] < min) { min = intArray[i, j]; }
+                }
+            }
+            Console.WriteLine(max);
+            Console.WriteLine(min);
             #endregion
         }
     }
